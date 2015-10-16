@@ -49,8 +49,8 @@ Client
 		url : 'http://localhost/server_jsonp.php' ,	//server_jsonp.php
 		token : 'foo' ,								//php can $_GET['foo']
 		callback : 'sometext',						//this is a temp callbackName, default random hash word
-		on_success : successHandle ,				//onSuccess trigger this function
-		on_timeout : timeoutHandle ,				//onTimeout trigger this function
+		onSuccess : successHandle ,				//onSuccess trigger this function
+		onTimeout : timeoutHandle ,				//onTimeout trigger this function
 		timeout : 5									// settimout 5 sec ,default timeout 10 sec
 	});
 	

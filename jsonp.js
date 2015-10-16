@@ -17,7 +17,7 @@ var jsonp = (function(){
 		timeout = options.timeout || 10 					// default timeout 10 sec
 
 		var timeout_trigger = window.setTimeout(function(){
-			delete window[callback];						//unset callback
+			window[callback] = function(){};				//unset callback
 			on_timeout();
 		}, timeout * 1000);
 
