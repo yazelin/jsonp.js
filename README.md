@@ -4,10 +4,10 @@ jsonp輕量級函式套件
 
 JSONP cross-domain ajax call.
 
-最簡單使用方式
-Client
------
 
+使用方式
+-----
+Client
 	//in client page
 	//call jsonp
 	jsonp.send({
@@ -20,9 +20,9 @@ Client
 		console.log(json);
 	}	
 	
-伺服端php為例
-Server_jsonp.php
+伺服端
 -----
+Server_jsonp.php
 
 	//一些處理程式後取得的資料
 	$somedata = json_encode(array("example" => "jsonp"));
@@ -38,9 +38,10 @@ Server_jsonp.php
 	}
 
 
+
 參數 parameter
-Client
 -----
+Client
 
 	//call jsonp
 	jsonp.send({
@@ -52,8 +53,8 @@ Client
 		timeout : 5									// settimout 5 sec ,default timeout 10 sec
 	});
 	
-Server_jsonp.php
 -----
+Server_jsonp.php
 
 	//一些處理程式後取得的資料
 	$somedata = json_encode(array("example" => "jsonp"));
@@ -68,7 +69,6 @@ Server_jsonp.php
 		header("text/javascript; charset=utf-8");
 		echo $_GET['foo'].'('.$somedata.')';	
 	}
-
 
 
 注意事項
