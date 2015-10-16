@@ -1,5 +1,5 @@
-# jsonp.js
-========
+jsonp.js
+-----
 jsonp輕量級函式套件
 
 JSONP cross-domain ajax call.
@@ -55,7 +55,7 @@ Client
 Server_jsonp.php
 -----
 
-//一些處理程式後取得的資料
+	//一些處理程式後取得的資料
 	$somedata = json_encode(array("example" => "jsonp"));
 	//預設是$_GET['callback'])取得callback的Function名稱若有修改了token，則依token修改
 	//上例是 $_GET['foo'])
@@ -73,6 +73,5 @@ Server_jsonp.php
 
 注意事項
 -----
-
-不建議修改token，使用預設的callback名即可。
-url上可帶其他參數，在server端仍可用GET方式取得，不影響jsonp的callback
+	不建議修改token，使用預設的callback名即可。
+	url上可帶其他參數，在server端仍可用GET方式取得，不影響jsonp的callback
