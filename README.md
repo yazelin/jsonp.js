@@ -24,7 +24,6 @@ Client
 Server_jsonp.php
 -----
 
-<?php
 	//一些處理程式後取得的資料
 	$somedata = json_encode(array("example" => "jsonp"));
 	//預設是$_GET['callback'])取得callback的Function名稱
@@ -37,7 +36,6 @@ Server_jsonp.php
 		header("text/javascript; charset=utf-8");
 		echo $_GET['callback'].'('.$somedata.')';	
 	}
-?>
 
 
 參數 parameter
@@ -57,7 +55,6 @@ Client
 Server_jsonp.php
 -----
 
-<?php
 //一些處理程式後取得的資料
 	$somedata = json_encode(array("example" => "jsonp"));
 	//預設是$_GET['callback'])取得callback的Function名稱若有修改了token，則依token修改
@@ -71,7 +68,7 @@ Server_jsonp.php
 		header("text/javascript; charset=utf-8");
 		echo $_GET['foo'].'('.$somedata.')';	
 	}
-?>
+
 
 
 注意事項
