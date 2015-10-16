@@ -8,6 +8,7 @@ JSONP cross-domain ajax call.
 使用方式
 -----
 Client
+
 	//in client page
 	//call jsonp
 	jsonp.send({
