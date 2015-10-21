@@ -1,15 +1,12 @@
-jsonp.js
------
-jsonp輕量級函式套件
+#jsonp.js
 
+jsonp輕量級函式套件
 JSONP cross-domain ajax call.
 
+###使用方式
+####Client
 
-使用方式
------
-Client
-
-	//in client page
+	//client.html
 	//call jsonp
 	jsonp.send({
 		url:'http://localhost/server_jsonp.php',
@@ -19,16 +16,15 @@ Client
 	//Callback Here
 	function callbacklog(json){
 		console.log(json);
-	}	
-	
-伺服端
------
-Server_jsonp.php
+	}
 
+####Server
+
+	//Server_jsonp.php
 	//一些處理程式後取得的資料
 	$somedata = json_encode(array("example" => "jsonp"));
 	//預設是$_GET['callback'])取得callback的Function名稱
-	//json 回應 
+	//判斷json 回應 
 	if (empty($_GET['callback'])){
 		header("Content-type: application/json; charset=utf-8"); 
 		echo $somedata;
@@ -36,13 +32,11 @@ Server_jsonp.php
 	}else{
 		header("text/javascript; charset=utf-8");
 		echo $_GET['callback'].'('.$somedata.')';	
-	}
-
-
-
-參數 parameter
------
-Client
+	}	
+	
+----
+###其他參數
+####Client
 
 	//call jsonp
 	jsonp.send({
@@ -54,9 +48,9 @@ Client
 		timeout : 5									// settimout 5 sec ,default timeout 10 sec
 	});
 	
------
-Server_jsonp.php
+####Server
 
+	//Server_jsonp.php
 	//一些處理程式後取得的資料
 	$somedata = json_encode(array("example" => "jsonp"));
 	//預設是$_GET['callback'])取得callback的Function名稱若有修改了token，則依token修改
@@ -72,7 +66,7 @@ Server_jsonp.php
 	}
 
 
-注意事項
------
-	不建議修改token，使用預設的callback名即可。
-	url上可帶其他參數，在server端仍可用GET方式取得，不影響jsonp的callback
+###注意事項
+* 不建議修改token，使用預設的"callback"名即可
+* url上可帶其他參數，在server端仍可用GET方式取得，不會影響jsonp的callback
+* 目前不支援Post
